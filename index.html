@@ -10,7 +10,10 @@
 		<div id="root">
 			<ul>
 				<li v-for="(skill,i) in skills">
-					{{i+1}}  {{skill.name}} {{skill.experience}} {{skill.extra}}<br>
+					<h1 v-if="skill.experience>5">{{i+1}}  {{skill.name}} {{skill.experience}} {{skill.extra}}<br></h1> <!-- v-show -->
+				</li>
+				<li v-for="(skill,i) in skills">
+					<h1 v-show="skill.experience>5">{{i+1}}  {{skill.name}} {{skill.experience}} {{skill.extra}}<br></h1> <!-- v-show -->
 				</li>
 			</ul>
 			
@@ -26,10 +29,10 @@
 				data:{
 					
 					skills:[
-						{name:"html",experience:55,extra:"nothing"},
-						{name:"html",experience:55,ex:"nothign for info!"},
-						{name:"html",experience:55},
-						{name:"html",experience:55},
+						{name:"html",experience:51,extra:"nothing"},
+						{name:"html",experience:5,ex:"nothign for info!"},
+						{name:"html",experience:5,exp:"my information "},
+						{name:"html",experience:25},
 
 					]
 				}
