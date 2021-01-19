@@ -6,31 +6,16 @@
 	</head>
 	<body>
 		
-		<div >
-			<p>Enter Your Personal Information: </p>
-	
-			<table id="root">
-				<tr>
-					<td>Name</td><td><input type="text" v-model="student_name"></td>
-				</tr>
-				<tr>
-					<td>Email</td><td><input type="email" v-model="student_email"></td>
-				</tr>
-				<tr>
-					<td>Password</td><td><input type="Password" v-model="student_password"></td>
-				</tr>
-				<tr>
-					<td>Name</td> <td>{{student_name}}</td>
-				</tr>
-				<tr>
-					<td>Email</td> <td>{{student_email}}</td>
-				</tr>
-				<tr>
-					<td>Password</td> <td>{{student_password}}</td>
-				</tr>
-
-			</table>
-
+		<div id="root">
+			
+			<ul>
+				<li><a :href="link1.url">{{link1.text}}</a></li> <!-- v-bind --> 
+			</ul>
+			
+			<ul>
+				<li><a :href="link2.url">{{link2.text}}</a></li> <!-- v-bind --> 
+			</ul>
+			
 
 		</div>
 
@@ -41,9 +26,16 @@
 			var app = new Vue({
 				el:"#root",
 				data:{
-					student_name:"xyz",
-					student_email:"xyz@info.com",
-					student_password:"xxxxxxxx",
+					link1:{
+						text:"Facebook",
+						title:"visite via Facebook",
+						url:"http://Facebook.com",
+					},
+					link2:{
+						text:"youtube",
+						title:"visite Youtube channel",
+						url:"http://youtube.com",
+					}
 
 				}  
 
