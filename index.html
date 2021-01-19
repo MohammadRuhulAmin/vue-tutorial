@@ -6,8 +6,32 @@
 	</head>
 	<body>
 		
-		<div id="root">
-			{{message}}
+		<div >
+			<p>Enter Your Personal Information: </p>
+	
+			<table id="root">
+				<tr>
+					<td>Name</td><td><input type="text" v-model="student_name"></td>
+				</tr>
+				<tr>
+					<td>Email</td><td><input type="email" v-model="student_email"></td>
+				</tr>
+				<tr>
+					<td>Password</td><td><input type="Password" v-model="student_password"></td>
+				</tr>
+				<tr>
+					<td>Name</td> <td>{{student_name}}</td>
+				</tr>
+				<tr>
+					<td>Email</td> <td>{{student_email}}</td>
+				</tr>
+				<tr>
+					<td>Password</td> <td>{{student_password}}</td>
+				</tr>
+
+			</table>
+
+
 		</div>
 
 
@@ -17,8 +41,11 @@
 			var app = new Vue({
 				el:"#root",
 				data:{
-					message:"this is my first Message",
-				}
+					student_name:"xyz",
+					student_email:"xyz@info.com",
+					student_password:"xxxxxxxx",
+
+				}  
 
 			});
 			
