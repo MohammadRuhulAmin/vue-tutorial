@@ -9,8 +9,8 @@
 		
 		<div id="root">
 			<ul>
-				<li v-for="skill in skills">
-					{{skill.name}} {{skill.experience}} {{skill.extra}}<br>
+				<li v-for="(skill,i) in skills">
+					{{i+1}}  {{skill.name}} {{skill.experience}} {{skill.extra}}<br>
 				</li>
 			</ul>
 			
@@ -27,7 +27,7 @@
 					
 					skills:[
 						{name:"html",experience:55,extra:"nothing"},
-						{name:"html",experience:55},
+						{name:"html",experience:55,ex:"nothign for info!"},
 						{name:"html",experience:55},
 						{name:"html",experience:55},
 
