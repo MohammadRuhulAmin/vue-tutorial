@@ -10,13 +10,12 @@
 		<div id="root">
 			<ul>
 				<li v-for="(skill,i) in skills">
-					<h1 v-if="skill.experience>5">{{i+1}}  {{skill.name}} {{skill.experience}} {{skill.extra}}<br></h1> <!-- v-show -->
-				</li>
-				<li v-for="(skill,i) in skills">
-					<h1 v-show="skill.experience>5">{{i+1}}  {{skill.name}} {{skill.experience}} {{skill.extra}}<br></h1> <!-- v-show -->
+					<p>{{skill}}</p>
 				</li>
 			</ul>
-			
+			<input type="text" v-model="newSkill">
+			<button V-on:click="addNewSkill">Add new Skill</button>
+
 
 		</div>
 
@@ -27,14 +26,13 @@
 			var app = new Vue({
 				el:"#root",
 				data:{
-					
-					skills:[
-						{name:"html",experience:51,extra:"nothing"},
-						{name:"html",experience:5,ex:"nothign for info!"},
-						{name:"html",experience:5,exp:"my information "},
-						{name:"html",experience:25},
-
-					]
+					newSkill:"",
+					skills:["html","css","js"]
+				},
+				methods:{
+					 addNewSkill(){
+					 	this.skills.push(this.newSkill);
+					 }
 				}
 				
 
