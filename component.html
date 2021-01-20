@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>
+			Vue js Tutorial
+		</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+
+	<body>
+		
+		<div id="root">
+			<sayfullah-panel></sayfullah-panel>
+			<rms-panel></rms-panel>
+			<br>
+			<sayfullah-panel>
+
+			</sayfullah-panel>
+			<br>
+			<ainun-panel>
+			</ainun-panel>
+			<rms-panel-2>
+			</rms-panel-2>
+
+		</div>
+	
+
+		<script type="text/javascript" src="js-library.js"></script>
+			
+
+
+		<script type="text/javascript">
+			Vue.component("rms-panel-2",{
+				template: 
+				`
+				<div>It is Complate!~~~~~~~!!!~~~~~~~~~ </div>
+				`
+			});
+			
+			Vue.component("rms-panel",{
+				template:
+				`
+				<div class="panel">
+					<div class="panelTitle">
+						<h3><span>##</span> this is panel title</h3>
+					</div>
+					<div class="panelContent">
+						<h3>This is my First panel -=- <br> Content <br>  that i am working on it !!!</h3>
+					</div>
+				</div>
+
+				`
+			});
+
+
+			
+
+
+			var application = new Vue({
+				el:"#root",
+				data:{
+					
+					
+
+				}
+		
+			});
+			
+		</script>
+	</body>
+</html>

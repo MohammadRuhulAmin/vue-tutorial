@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>
+			Vue js Tutorial
+		</title>
+		
+	</head>
+	<body>
+
+		<div id="root-info">
+            <a :href="virtual_info.facebook.account_1">Youtube Account 1</a><br>
+            <a :href="virtual_info.facebook.account_2">Youtube Account 2</a><br>
+            <br>
+            <a :href="virtual_info.youtube.account_1">Facebook Account 1</a><br>
+            <a :href="virtual_info.youtube.account_2">Facebook Account 2</a><br>
+
+        </div>
+        <br>
+        <div id="root-info">
+            <ul>
+                <li v-for="skill in skills">
+                    {{skill}}
+                </li>
+            </ul>
+        </div>
+		
+
+		<script type="text/javascript" src="js-library.js"></script>
+
+		<script type="text/javascript">
+
+			var app = new Vue({
+				el:"#root-info",
+				data:{
+                    
+                    virtual_info:{
+                        gmail_id:"alfabinomialbeta23@gmail.com",
+                        facebook:{
+                            account_1:"https://www.facebook.com/",
+                            account_2:"https://www.facebook.com/",
+                        },
+                        youtube:{
+                            account_1:"https://www.youtube.com",
+                            account_2:"https://www.youtube.com",
+                        },
+                       
+
+                    },
+                    skills:["html","css","javascript"],
+
+
+				}
+				
+				
+
+			});
+			
+		</script>
+	</body>
+</html>

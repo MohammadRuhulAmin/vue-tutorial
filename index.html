@@ -8,34 +8,44 @@
 	<body>
 		
 		<div id="root">
-			
-			<ra-panel></ra-panel>
-			<ra-panel-2></ra-panel-2>
+			<rms-panel>
+
+			</rms-panel>
 
 		</div>
-		
+	
 
 		<script type="text/javascript" src="js-library.js"></script>
 
 		<script type="text/javascript">
-			
-			Vue.component("ra-panel",{
-				template:`
-					<h1>This is component! </h1>
+			Vue.component("rms-panel",{
+				template: 
+				 `
+					<div>
+						<h1>Mohammad Ruhul Amin</h1>
+						<p>Programmer</p>
+					</div>
+
 				`
 			});
-			Vue.component("ra-panel-2",{
-				template:`
-					<h1>This is component! 2 </h1>
-				`
-			});
+
 
 			var app = new Vue({
 				el:"#root",
 				data:{
+					user_name:"",
+					user_email:"",
+					user_facebook_id:"",
+					alInfo:[
+						"this.user_name,this.user_email,this.user_facebook_id",
+						"this.user_name,this.user_email,this.user_facebook_id",
+						"this.user_name,this.user_email,this.user_facebook_id",
+						"this.user_name,this.user_email,this.user_facebook_id"
+					],
 					
-				}
-				
+
+				},
+			
 				
 
 			});
