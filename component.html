@@ -10,52 +10,34 @@
 	<body>
 		
 		<div id="root">
-			<sayfullah-panel></sayfullah-panel>
-			<rms-panel></rms-panel>
-			<br>
-			<sayfullah-panel>
+			<panel-form>
+				<input type="text" value="user Infomation">
+				<button type="submit">Submit Information</button>
 
-			</sayfullah-panel>
-			<br>
-			<ainun-panel>
-			</ainun-panel>
-			<rms-panel-2>
-			</rms-panel-2>
+			</panel-form>
 
 		</div>
 	
 
 		<script type="text/javascript" src="js-library.js"></script>
-			
+
 
 
 		<script type="text/javascript">
-			Vue.component("rms-panel-2",{
-				template: 
-				`
-				<div>It is Complate!~~~~~~~!!!~~~~~~~~~ </div>
-				`
-			});
-			
-			Vue.component("rms-panel",{
+
+			Vue.component("panel-form",{
 				template:
 				`
-				<div class="panel">
-					<div class="panelTitle">
-						<h3><span>##</span> this is panel title</h3>
+					<div>User Information
+						
+						<slot>
+						
+						</slot>	
 					</div>
-					<div class="panelContent">
-						<h3>This is my First panel -=- <br> Content <br>  that i am working on it !!!</h3>
-					</div>
-				</div>
+
 
 				`
 			});
-
-
-			
-
-
 			var application = new Vue({
 				el:"#root",
 				data:{
