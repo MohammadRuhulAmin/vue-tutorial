@@ -8,19 +8,8 @@
 	<body>
 		
 		<div id="root">
-			<ul>
-				<li v-for="(payment, i ) in payments">
-					<p>{{i+1}}</p> <p>{{payment.name}}</p><span> {{payment.amount}}</span> <span>{{payment.paid}}</span>
-				</li>
-			</ul>
-			<ul>
-				<li v-for="(payment, i ) in unpaidPayments">
-					<p>{{i+1}}</p> <p>{{payment.name}}</p><span> {{payment.amount}}</span> <span>{{payment.paid}}</span>
-				</li>
-			</ul>
-			
-			<h1>Total Amount is : {{totalAmount}}</h1>
-
+			Your Upper Case Name is <h1>{{name | upperCase}}</h1>
+				Your Upper Case Profession is <h1>{{profession | upperCase}}</h1>
 		</div>
 
 
@@ -30,24 +19,13 @@
 			var app = new Vue({
 				el:"#root",
 				data:{
-					payments:[
-						{name:"houseRent",amount:15000,paid:true},
-						{name:"electricity",amount:1000,paid:false},
-						{name:"Gass",amount:150,paid:false},
-					]
+					name:"mohammad ruhul amin",
+					profession:"Softwere Engineer",
 				},
-				computed:{
-					unpaidPayments:function(){
-						return this.payments.filter(function(p){
-							return !p.paid;
-						});
-					},
-					totalAmount:function(){
-						var sum = 0;
-						for(var i=0;i<this.payments.length;i++){
-							sum +=this.payments[i].amount;
-						}
-						return sum;
+				
+				filters:{
+					upperCase:function(pattern){
+							return pattern.toUpperCase();
 					}
 				}
 
