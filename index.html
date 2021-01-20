@@ -9,12 +9,16 @@
 		
 		<div id="root">
 			<ul>
-				<li v-for="(skill,i) in skills">
-					<p>{{skill}} &nbsp; <button @click="removeSkill(i)">X</button></p>
+				<li v-for="(payment, i ) in payments">
+					<p>{{i+1}}</p> <p>{{payment.name}}</p><span> {{payment.amount}}</span> <span>{{payment.paid}}</span>
 				</li>
 			</ul>
-			<input type="text" v-model="newSkill">
-			<button V-on:click="addNewSkill">Add new Skill</button>
+			<ul>
+				<li v-for="(payment, i ) in unpaidPayments">
+					<p>{{i+1}}</p> <p>{{payment.name}}</p><span> {{payment.amount}}</span> <span>{{payment.paid}}</span>
+				</li>
+			</ul>
+			
 
 
 		</div>
@@ -26,18 +30,19 @@
 			var app = new Vue({
 				el:"#root",
 				data:{
-					newSkill:"",
-					skills:["html","css","js"]
+					payments:[
+						{name:"houseRent",amount:15000,paid:true},
+						{name:"electricity",amount:1000,paid:false},
+						{name:"Gass",amount:150,paid:false},
+					]
 				},
-				methods:{
-					 addNewSkill(){
-					 	this.skills.push(this.newSkill);
-					 },
-					 removeSkill(i){
-					 	this.skills.splice(i,1);
-					 }
+				computed:{
+					unpaidPayments:function(){
+						return this.payments.filter(function(p){
+							return !p.paid;
+						});
+					}
 				}
-				
 
 			});
 			
