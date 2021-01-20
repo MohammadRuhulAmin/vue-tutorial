@@ -10,12 +10,18 @@
 		<div id="root">
 			Your Upper Case Name is <h1>{{name | upperCase}}</h1>
 				Your Upper Case Profession is <h1>{{profession | upperCase}}</h1>
+				Your Upper Case Name is <h1>{{name | lowerCase}}</h1>
+				Your Upper Case Profession is <h1>{{profession | upperCase}}</h1>
 		</div>
-
-
+		
+		
 		<script type="text/javascript" src="js-library.js"></script>
 
 		<script type="text/javascript">
+			Vue.filter("lowerCase",function(pattern){
+				return pattern.toLowerCase();
+			})
+
 			var app = new Vue({
 				el:"#root",
 				data:{
