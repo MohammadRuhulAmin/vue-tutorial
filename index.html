@@ -19,7 +19,7 @@
 				</li>
 			</ul>
 			
-
+			<h1>Total Amount is : {{totalAmount}}</h1>
 
 		</div>
 
@@ -41,6 +41,13 @@
 						return this.payments.filter(function(p){
 							return !p.paid;
 						});
+					},
+					totalAmount:function(){
+						var sum = 0;
+						for(var i=0;i<this.payments.length;i++){
+							sum +=this.payments[i].amount;
+						}
+						return sum;
 					}
 				}
 
